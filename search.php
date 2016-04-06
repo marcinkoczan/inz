@@ -38,6 +38,30 @@ function wyszukiwanie()
 	echo '</tbody>';
     echo "</table>";
 	}
+	
+	$wynik = mysql_query("SELECT * FROM productimg") or die('Błąd zapytania');
+	if(mysql_num_rows($wynik) > 0) { 
+		echo '<div class="row">
+				<div class="col-md-12">
+					<ul class="portfolio-list">
+						
+								';
+		
+		while($r = mysql_fetch_object($wynik)) {
+			
+									echo '<li class="col-md-3 isotope-item">
+									<div class="team-item thumbnail">';
+									echo '<a class="thumb-info" href="http://localhost/suploteka/odzywki/'.$r->ID.'/index.php">';
+									echo '<img class="img-responsive" alt="" src="pictures/'.$r->nazwa_zdjecia.'"></img>
+								</a></div>
+						</li>';
+		}
+							echo '
+					</ul>
+				</div>
+			</div>';
+		
+	}
 }
 ?>
 

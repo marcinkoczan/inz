@@ -1,0 +1,14 @@
+img {
+    border: 0;
+	height = 150px;
+	display = block;
+	position = relative;
+}
+
+ul {
+	list-style: none;
+}	
+
+li {
+	height = 150px;
+}
